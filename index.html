@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>🎁</title>
+  
+</head>
+<body>
+    <div id="startPage">
+        <h1>Hi ❤️</h1>
+        <h2>💝Ye maine khaas aapke liye banaya hai! Start button dabaiye💖</h2>
+        <button onclick="startApp()">Start</button>
+    </div>
+
+    <div id="shayariPage">
+        <div id="msg">Loading Shayari...</div>
+        <div id="gifBox"><img id="gifImage" src="" alt="gif" /></div>
+        <div class="button-container">
+            <button id="nextButton" onclick="showNextShayari()">Next</button>
+        </div>
+    </div>
+
+    <div id="proposalPage">
+        <h2 id="proposalText"></h2>
+        <div class="button-container">
+            <button id="yesButton" onclick="sendResponse('yes')" style="background-color: green;">Yes ✅</button>
+            <button id="noButton" onclick="sendResponse('no')" style="background-color: black;">No ❌</button>
+        </div>
+        <div id="proposalGifBox"><img id="gifImageProposal" src="gif4.gif" alt="Proposal GIF" /></div>
+    </div>
+
+    <div id="popupModal" class="popup-modal" style="display:none;">
+        <div class="popup-content">
+            <div id="popupMessage" class="popup-message">Thank you</div>
+            <button id="popupNextBtn">Next</button>
+            <div id="floatingHeartsContainer" class="floating-hearts-container"></div>
+            <div id="cameraContainer" style="display:none; margin-top: 20px;">
+                <video id="video" width="320" height="240" autoplay></video>
+                <br />
+                <button id="captureBtn" style="margin-top: 10px;">Capture Photo</button>
+                <canvas id="canvas" width="320" height="240" style="display:none;"></canvas>
+                <div id="photoStatus" style="margin-top: 10px; color: lightgreen;"></div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="backgroundMusic" loop>
+        <source src="0c24911425ce2f710fd96e633dcd4b12_160.m4a" type="audio/aac" />
+    </audio>
+
+
+<script src="./script.js"></script>
+</body>
+</html>

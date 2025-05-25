@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    max-width: 600px;
+}
+
+#shayari-box, #proposal-box, #response-box {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #ff3366;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ff6699;
+}
+
+#proposal-question {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#response-text {
+    font-size: 20px;
+    color: yellow;
+}
+  .floating-hearts-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+            margin-top: 0;
+            pointer-events: none;
+            z-index: -9999;
+        }
+        .floating-heart {
+            position: absolute;
+            bottom: 0;
+            width: 100px;
+            height: 100px;
+            opacity: 0.8;
+            animation-name: floatUp;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-200px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        .tilt-left {
+            transform: rotate(-15deg);
+        }
+        .tilt-right {
+            transform: rotate(15deg);
+        }
+
+        /* Popup scale animation for "I LOVE YOU" message */
+        @keyframes popupScale {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .popup-scale {
+            animation: popupScale 0.6s ease forwards;
+        }
+.popup-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .popup-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            color: rgb(250, 94, 172);
+            width: 80%;
+            max-width: 400px;
+            position: relative;
+        }
+        .popup-message {
+            font-size: 24px;
+            margin-bottom: 20px;
+            min-height: 50px;
+            color: hotpink;
+        }
+        #popupNextBtn {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #popupNextBtn:hover {
+            background-color: darkred;
+        }
+        .fade-out {
+            animation: fadeOut 1s forwards;
+        }
+        .fade-in {
+            animation: fadeIn 1s forwards;
+        } 
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        body {
+            background: url('background.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        #shayariPage, #proposalPage, #gifBox, #proposalGifBox {
+            display: none;
+        }
+        #shayariText {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            width: 100%;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            background-color: red;
+            color: white;
+            border-radius: 10px;
+            margin: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        button:hover {
+            background-color: darkred;
+            transform: scale(1.05);
+        }
+        #gifBox img, #proposalGifBox img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 15px;
+            margin-top: 15px;
+            opacity: 0;
+            transform: scale(0.95);
+            animation: gifFadeIn 0.8s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes gifFadeIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
