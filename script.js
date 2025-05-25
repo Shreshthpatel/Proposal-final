@@ -113,10 +113,11 @@
             showPopup();
             sendTelegramMessage("Someone said Yes to the proposal! 💖");
         } else {
-            let music = "no.mp3";
+            
             let message = "She selected NO 💔";
-            alert("Hey Girl, I Respect your opinion , I am saying verry sorry if it hurt you even a little");
-            document.getElementById("backgroundMusic").src = music;
+            noshowPopup();
+            
+            document.getElementById("backgroundMusic").src = "no.mp3";
             document.getElementById("backgroundMusic").play();
             sendTelegramMessage(message);
         }
@@ -143,14 +144,92 @@
             popupMessage.textContent = "I’m going to say this for the first time...";
         } else if (popupStep === 2) {
             popupMessage.classList.remove('fade-in', 'popup-scale');
-            startFloatingHearts();
+            
             setTimeout(() => {
                 popupMessage.textContent = "I Love You 💞💕";
                 popupMessage.style.color = "rgb(250, 94, 172)";
                 popupMessage.classList.add('popup-scale');
                 popupNextBtn.style.display = "none";
             }, 1000);
+            startFloatingHearts();
         }
+    });
+
+    function startFloatingHearts() {
+        const heartImages = ['heart1.png', 'heart2.png', 'heart3.png'];
+        const screenWidth = window.innerWidth;
+        floatingHeartsContainer.innerHTML = "";
+        for (let i = 0; i < 40; i++) {
+            const heart = document.createElement('img');
+            heart.src = heartImages[i % heartImages.length];
+            heart.classList.add('floating-heart');
+            const xPos = Math.random() * screenWidth;
+            heart.style.left = `${xPos}px`;
+            heart.style.bottom = '0px';
+            if (i % 2 === 0) {
+                heart.classList.add('tilt-left');
+            } else {
+                heart.classList.add('tilt-right');
+            }
+            heart.style.animationDuration = `${4 + Math.random() * 4}s`;
+            floatingHeartsContainer.appendChild(heart);
+        }
+    }
+
+    const nopopupModal = document.getElementById('nopopupModal');
+    const nopopupMessage = document.getElementById('nopopupMessage');
+    const nopopupNextBtn = document.getElementById('nopopupNextBtn');
+   
+
+    let nopopupStep = 0;
+
+    function noshowPopup() {
+        nopopupStep = 0;
+        nopopupMessage.textContent = "Thats ok 😥";
+        nopopupNextBtn.style.display = "inline-block";
+       
+        nopopupModal.style.display = "flex";
+    }
+1
+    nopopupNextBtn.addEventListener('click', () => {
+        nopopupStep++;
+        if (nopopupStep === 1) {
+            popupMessage.classList.remove('fade-in', 'popup-scale');
+            
+            setTimeout(() => {
+                 nopopupMessage.textContent = "Apke bhi opinion ko respect karunga"; 
+                 nopopupMessage.classList.add('popup-scale');
+            }, 1000);
+           
+        } else if (nopopupStep === 2) {
+             setTimeout(() => {
+                 nopopupMessage.textContent = "Bas ye chahta hu aap hamesha apni zindgi khusi se jiyo"; 
+                 nopopupMessage.classList.add('popup-scale');
+            }, 1000);
+                                   
+        } else if (nopopupStep === 3) {
+             setTimeout(() => {
+                 nopopupMessage.textContent = "Mere dil mein apke liye sada hi jagha rahegi"; 
+                 nopopupMessage.classList.add('popup-scale');
+            }, 1000);
+                                 
+        } else if (nopopupStep === 4) {
+             setTimeout(() => {
+                 nopopupMessage.textContent = "Apko agar time chaiye let me know ya ap apne response se affirm hai toh koi batnhi"; 
+                 nopopupMessage.classList.add('popup-scale');
+            }, 1000);
+                                  
+        } else if (nopopupStep === 5){
+             setTimeout(() => {
+                 nopopupMessage.textContent = "Ok... Thanks Bye💔"; 
+                 nopopupMessage.classList.add('popup-scale');
+            }, 1000);
+            
+        }
+          else if (popupStep === 6){
+           window.clo
+        }
+        
     });
 
     function startFloatingHearts() {
